@@ -36,7 +36,7 @@ $ docker run --rm \
 <dt>PG_PASSWORD</dt>
 <dd>Password for Username.</dd>
 <dt>PG_SSL_MODE</dt>
-<dd>SSL mode (accept by default).</dd>
+<dd>SSL mode (prefer by default).</dd>
 <dt>ENCRYPTION_KEY</dt>
 <dd>
 7zip encryption key.

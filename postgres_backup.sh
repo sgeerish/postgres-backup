@@ -10,7 +10,7 @@ BACKUP_PATH=/backups
 [ -z $PG_DATABASE ] && echo "PG_DATABASE not set" && WARIABLES_MISSING=1
 [ -z $PG_USERNAME ] && echo "PG_USERNAME not set" && WARIABLES_MISSING=1
 [ -z $PG_PASSWORD ] && echo "PG_PASSWORD not set" && WARIABLES_MISSING=1
-[ -z $PG_SSL_MODE ] && PG_SSL_MODE=allow
+[ -z $PG_SSL_MODE ] && PG_SSL_MODE=prefer
 
 export PGHOST=$PG_HOST
 export PGPORT=$PG_PORT
