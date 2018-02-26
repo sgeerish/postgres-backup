@@ -13,7 +13,7 @@ RUN curl "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/maste
 
 COPY entrypoint.sh postgres_backup.sh /usr/local/bin/
 
-RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/backup_script.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/postgres_backup.sh
 
 VOLUME ["/backups"]
 

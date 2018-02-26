@@ -39,7 +39,7 @@ $ docker run --rm \
 <dd>SSL mode (prefer by default).</dd>
 <dt>ENCRYPTION_KEY</dt>
 <dd>
-7zip encryption key.
+[7zip](http://www.7-zip.org/) encryption key.
 
 >[7zip](http://www.7-zip.org/) is used for encryption and compression.
 </dd>
