@@ -24,25 +24,25 @@ $ docker run --rm \
 
 ### Environment Variables
 ---
-<dl>
-<dt>PG_HOST</dt>
-<dd>Hostname or IP of PostgreSQL server.</dd>
-<dt>PG_PORT</dt>
-<dd>Port of the PostgreQL server (5432 by default).</dd>
-<dt>PG_DATABASE</dt>
-<dd>Database name, which needed to backup.</dd>
-<dt>PG_USERNAME</dt>
-<dd>Username to connect to Database.</dd>
-<dt>PG_PASSWORD</dt>
-<dd>Password for Username.</dd>
-<dt>PG_SSL_MODE</dt>
-<dd>SSL mode (prefer by default).</dd>
-<dt>ENCRYPTION_KEY</dt>
-<dd>
+
+#### PG_HOST 
+Hostname or IP of PostgreSQL server.
+
+#### PG_PORT
+Port of the PostgreQL server (5432 by default).
+
+#### PG_DATABASE
+Database name, which needed to backup.
+#### PG_USERNAME
+Username to connect to Database.
+#### PG_PASSWORD
+Password for Username.
+#### PG_SSL_MODE
+SSL mode (prefer by default).
+#### ENCRYPTION_KEY
 [7zip](http://www.7-zip.org/) encryption key.
 
 >[7zip](http://www.7-zip.org/) is used for encryption and compression.
-</dd>
-<dt>DROPBOX_API_KEY</dt>
-<dd>API KEY for Dropbox uloads.</dd>
-</dl>
+
+#### DROPBOX_API_KEY
+API KEY for Dropbox uloads.
