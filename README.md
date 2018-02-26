@@ -1,14 +1,15 @@
-# Docker image for PostgreSQL backup
+### Docker image for PostgreSQL backup
+---
 Based on [official postgres images](https://hub.docker.com/_/postgres/) from docker hub.
 
 For uploads to Dropbox it uses [Dropbox-Uploader](https://github.com/andreafabrizi/Dropbox-Uploader) script.
 
-## Supported tags
+### Supported tags
 ---
 
 * latest
 
-## How to use this image
+### How to use this image
 ---
 
 ### start backup 
