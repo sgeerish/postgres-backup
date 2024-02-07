@@ -30,7 +30,7 @@ echo "Creating backup ..."
 pg_dump -F c -f ${FILE_NAME} -U $PG_USERNAME  $PG_DATABASE
 echo "Done."
 
-if [[ -f $FILE_NAME && ! -z $ENCRYPTION_KEY && ! -z $DROPBOX_API ]]
+if [[ -f $FILE_NAME && ! -z $ENCRYPTION_KEY && ! -z $DROPBOX_API_KEY ]]
 then
     echo "Encrypting backup and sending to Dropbox ..."
     7za a -mhe=on -p$ENCRYPTION_KEY $FILE_NAME.7z $FILE_NAME \
