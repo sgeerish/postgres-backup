@@ -32,10 +32,10 @@ echo "Done."
 echo $FILE_NAME
 echo $ENCRYPTION_KEY
 echo $DROPBOX_API_KEY
-if [[ -f $FILE_NAME && ! -z $ENCRYPTION_KEY && ! -z $DROPBOX_API_KEY ]]
+if [[ -f $FILE_NAME && ! -z $DROPBOX_API_KEY ]]
 then
     echo "Encrypting backup and sending to Dropbox ..."
-    7za a -mhe=on -p$ENCRYPTION_KEY $FILE_NAME.7z $FILE_NAME \
+    7za a -mhe=on $FILE_NAME.7z $FILE_NAME \
     && dropbox_uploader upload $FILE_NAME.7z / \
     && rm -f $FILE_NAME.7z \
     && echo "Done."
