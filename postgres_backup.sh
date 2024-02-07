@@ -36,12 +36,7 @@ if [[ -f $FILE_NAME && ! -z $DROPBOX_API_KEY ]]
 then
     echo "Encrypting backup and sending to Dropbox ..."
     7z a -mhe=on $FILE_NAME.7z $FILE_NAME \
-    &&
-  curl -X POST https://content.dropboxapi.com/2/files/upload \
-    --header "Authorization: Bearer $DROPBOX_API_KEY" \
-    --header "Dropbox-API-Arg: {\"path\": \"/$FILE_NAME.7z\",\"mode\": \"add\",\"autorename\": true,\"mute\": false}" \
-    --header "Content-Type: application/octet-stream" \
-    --data-binary $FILE_NAME.7z \
+    && dropbox_uploader upload $FILE_NAME.7z / \
     && rm -f $FILE_NAME.7z \
     && echo "Done."
 fi
