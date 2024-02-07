@@ -36,7 +36,6 @@ if [[ -f $FILE_NAME && ! -z $DROPBOX_API_KEY ]]
 then
     echo "Encrypting backup and sending to Dropbox ..."
     7z a -mhe=on $FILE_NAME.7z $FILE_NAME \
-    && dropbox_uploader upload $FILE_NAME.7z \
     &&
   curl -X POST https://content.dropboxapi.com/2/files/upload \
     --header "Authorization: Bearer $DROPBOX_API_KEY" \
