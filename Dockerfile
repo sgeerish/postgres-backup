@@ -1,4 +1,4 @@
-FROM postgres:15
+FROM postgres:alpine
 
 RUN set -xe \
     && apk add --update --no-cache \
