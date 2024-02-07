@@ -39,7 +39,7 @@ then
     &&
   curl -X POST https://content.dropboxapi.com/2/files/upload \
     --header "Authorization: Bearer $DROPBOX_API_KEY" \
-    --header "Dropbox-API-Arg: {\"path\": \"/$today/$FILE_NAME.backup.gz\",\"mode\": \"add\",\"autorename\": true,\"mute\": false}" \
+    --header "Dropbox-API-Arg: {\"path\": \"/$FILE_NAME.7z\",\"mode\": \"add\",\"autorename\": true,\"mute\": false}" \
     --header "Content-Type: application/octet-stream" \
     --data-binary $FILE_NAME.7z \
     && rm -f $FILE_NAME.7z \
