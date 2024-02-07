@@ -21,3 +21,4 @@ WORKDIR /backups
 
 ENTRYPOINT ["entrypoint.sh"]
 
+CMD ["postgres_backup.sh"]
