@@ -1,24 +1,24 @@
-FROM postgres:alpine
+FROM alpine:edge
 
-RUN set -xe \
-    && apk add --update --no-cache \
-        bash \
-        ca-certificates \
-        curl \
-        p7zip \
-        sed
+RUN apk update; \
+	apk add postgresql15-client; \
+	apk add curl; \
+	curl -L --insecure https://github.com/odise/go-cron/releases/download/v0.0.6/go-cron-linux.gz | zcat > /usr/local/bin/go-cron; \
+	chmod u+x /usr/local/bin/go-cron; \
+	rm -rf /var/cache/apk/*; \
+	apk add --update bash && rm -rf /var/cache/apk/*
 
-RUN curl "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh" -o /usr/local/bin/dropbox_uploader \
-    && chmod +x /usr/local/bin/dropbox_uploader
+ENV POSTGRESQLDUMP_OPTIONS ""
+ENV POSTGRESQL_HOST ""
+ENV POSTGRESQL_PORT 5432
+ENV POSTGRESQL_USER ""
+ENV POSTGRESQL_PASSWORD ""
+ENV DROPBOX_PREFIX ""
+ENV DROPBOX_ACCESS_TOKEN ""
+ENV DATABASE_NAME ""
+ENV SCHEDULE ""
 
-COPY entrypoint.sh postgres_backup.sh /usr/local/bin/
+ADD run.sh run.sh
+ADD backup.sh backup.sh
 
-RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/postgres_backup.sh
-
-VOLUME ["/backups"]
-
-WORKDIR /backups
-
-ENTRYPOINT ["entrypoint.sh"]
-
-CMD ["postgres_backup.sh"]
+CMD ["sh", "run.sh"]
